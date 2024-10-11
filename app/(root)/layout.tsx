@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Vasundhara",
   description: "A project to help sustain  Earth",
+  icons:{icon:"logo.png"},
 };
 
 export default function RootLayout({

@@ -31,3 +31,394 @@ body {
     text-wrap: balance;
   }
 }
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #E1F0DA, #D4E7C5); /* Updated gradient */
+  color: #6A9A56; /* Updated text color */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+  background-color: #99BC85; /* Updated header background color */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 90px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #E1F0DA; /* Updated link color */
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  cursor: pointer;
+  color: #006630; /* Updated hover color */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-profile a{
+  margin: 0 15px;
+  text-decoration: none;
+  color: #E1F0DA; /* Updated link color */
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+
+}
+.user-profile a:hover{
+  cursor: pointer;
+  color: #006630;
+}
+/* Page Sections */
+.page {
+  display: none;
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Home Container */
+.home-container {
+  display: flex;
+  align-items: flex-start; /* Align items to the start for overlapping */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* Set position for absolute child */
+  padding: 2rem 0; /* Add padding for spacing */
+}
+
+.home-text {
+  flex: 1;
+  padding-right: 2rem;
+  position: relative; /* Required for z-index */
+  z-index: 2; /* Make sure text is above the image */
+}
+
+.home-text h1 {
+  font-size: 3rem;
+  color: #006630; /* Updated heading color */
+  margin-bottom: 1rem;
+}
+
+.home-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #166c45;
+}
+
+.home-image {
+  position: absolute; /* Allow the image to overlap */
+  bottom: 6rem; /* Adjust this value to position the image */
+  right: 0; /* Align to the right */
+  left: 55%; /* Align to the left */
+  width: 700px; /* Increase width */
+  height: 50%; /* Ensure height adjusts automatically */
+  z-index: 1; /* Behind the text */
+}
+
+.home-image img {
+  width: 100%; /* Make it responsive */
+  height: auto; /* Keep aspect ratio */
+  opacity: 40%;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  padding: 10px 20px;
+  background-color: #99BC85; /* Updated button background color */
+  color: #E1F0DA; /* Updated button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, transform 0.3s; /* Added transform for hover effect */
+}
+
+.cta-button:hover {
+  background-color: #006630; /* Updated hover color */
+  transform: scale(1.05); /* Added scale effect */
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: #E1F0DA; /* Updated user info background */
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Updated shadow for contrast */
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 3px solid #99BC85; /* Updated border color */
+}
+
+.score-gauge {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#scoreGauge {
+  width: 200px;
+  height: 200px;
+}
+
+/* Score Generator Styles */
+#scoreForm {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#scoreForm label {
+  display: block;
+  margin-top: 1rem;
+  color: #6A9A56; /* Updated label color */
+}
+
+#scoreForm input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #99BC85; /* Updated input border color */
+  border-radius: 5px; /* Added border-radius for input */
+  transition: border-color 0.3s; /* Added transition for input */
+  background-color: #D4E7C5; /* Updated input background color */
+  color: #6A9A56; /* Updated input text color */
+}
+
+#scoreForm input:focus {
+  border-color: #99BC85; /* Updated focus border color */
+  outline: none; /* Remove default outline */
+}
+
+#scoreForm button {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #99BC85; /* Button background color */
+  color: #E1F0DA; /* Button text color */
+  border: none;
+  border-radius: 20px; /* More rounded edges */
+  cursor: pointer;
+  padding: 12px; /* Increased padding for a better click area */
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: bold; /* Bold text for visibility */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+#scoreForm button:hover {
+  background-color: #6A9A56; /* Darker hover color */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Score Animation */
+.score-animation {
+  display: none;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #99BC85; /* Updated spinner color */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.score-result {
+  display: none;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#greenScoreDisplay {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #99BC85; /* Updated score display color */
+  margin-top: 1rem;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #99BC85; /* Updated footer background color */
+  color: #E1F0DA; /* Updated footer text color */
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us, .contact-info {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+      flex-direction: column;
+  }
+
+  .home-text, .home-image {
+      width: 100%;
+      padding: 1rem 0;
+  }
+
+  .footer-content {
+      flex-direction: column;
+  }
+
+  .about-us, .contact-info {
+      margin-bottom: 1rem;
+  }
+}
+
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px); /* add a blur effect to the background */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 400px; /* add a max-width to prevent the modal from getting too wide */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow effect */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s; /* add a transition effect to the close button */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px; /* add some padding to the form */
+}
+
+#loginForm input,
+#loginForm button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd; /* add a subtle border to the form elements */
+  border-radius: 5px; /* add a subtle border radius to the form elements */
+}
+
+#loginForm button {
+  background-color: #2d862d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+  background-color: #117633;
+}
+
+#loginForm button:active {
+  background-color: #1a5c1a; /* add a darker background color on active state */
+}
+
+#loginForm input:focus {
+  outline: none; /* remove the default outline on focus */
+  border-color: #2d862d; /* add a subtle border color on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* add a subtle shadow effect on focus */
+}
+
+
