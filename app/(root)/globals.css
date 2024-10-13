@@ -17,6 +17,8 @@
 }
 
 body {
+  overflow: hidden; /* Hide scrollbars */
+
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
